@@ -1,0 +1,196 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f3f2ef;
+  --foreground: #191919;
+  --linkedin-blue: #0a66c2;
+  --linkedin-light-blue: #e7f3ff;
+  --linkedin-hover-blue: #004182;
+  --linkedin-success: #057642;
+  --linkedin-error: #b74700;
+  --card-background: #ffffff;
+  --border-color: #e0e0e0;
+  --placeholder-color: #666666;
+  /* Darker for better contrast in light mode */
+  --input-text-color: #191919;
+  /* Darker text color for better visibility */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* LinkedIn doesn't have a true dark mode, but for system preference we'll provide one */
+    --background: #1d2226;
+    --foreground: #ffffff;
+    --card-background: #283035;
+    --border-color: #3d4145;
+    --placeholder-color: #a0a0a0;
+    --input-text-color: #e0e0e0;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* Input default styling */
+input,
+textarea,
+select {
+  color: #191919 !important;
+  /* Force dark text color in inputs for light mode */
+  background-color: #ffffff !important;
+  /* Force white background in inputs for light mode */
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  width: 100%;
+}
+
+/* Placeholder text styling - with increased specificity */
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+  color: #666666 !important;
+  /* Darker placeholder for better contrast in light mode */
+  opacity: 1 !important;
+  /* Firefox */
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder,
+select:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #666666 !important;
+  /* Darker placeholder for better contrast in light mode */
+}
+
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder,
+select::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #666666 !important;
+  /* Darker placeholder for better contrast in light mode */
+}
+
+/* Input focus state */
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--linkedin-blue);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.2);
+}
+
+/* LinkedIn-style button */
+.linkedin-btn-primary {
+  background-color: var(--linkedin-blue);
+  color: white;
+  border-radius: 24px;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  transition: background-color 0.2s;
+}
+
+.linkedin-btn-primary:hover {
+  background-color: var(--linkedin-hover-blue);
+}
+
+.linkedin-btn-secondary {
+  background-color: white;
+  color: var(--linkedin-blue);
+  border: 1px solid var(--linkedin-blue);
+  border-radius: 24px;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  transition: background-color 0.2s;
+}
+
+.linkedin-btn-secondary:hover {
+  background-color: rgba(10, 102, 194, 0.1);
+}
+
+/* Form inputs */
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: #ffffff !important;
+  /* Force white background in inputs for light mode */
+  color: #191919 !important;
+  /* Force dark text color in inputs for light mode */
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input:focus {
+  border-color: var(--linkedin-blue);
+  box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.2);
+}
+
+/* Tailwind might be overriding some of these styles, so let's add specificity */
+[type="text"],
+[type="email"],
+[type="url"],
+[type="password"],
+[type="number"],
+[type="date"],
+[type="datetime-local"],
+[type="month"],
+[type="search"],
+[type="tel"],
+[type="time"],
+[type="week"],
+[multiple],
+textarea,
+select {
+  color: #191919 !important;
+  /* Force dark text color in inputs for light mode */
+  background-color: #ffffff !important;
+  /* Force white background in inputs for light mode */
+  border-color: var(--border-color);
+}
+
+/* Tailwind form reset overrides */
+.tw-input {
+  appearance: none !important;
+  background-color: #ffffff !important;
+  color: #191919 !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 0.375rem !important;
+  padding: 0.5rem 0.75rem !important;
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+}
+
+.tw-input::placeholder {
+  color: #6b7280 !important;
+  opacity: 1 !important;
+}
+
+/* Light mode specific overrides */
+@media (prefers-color-scheme: light) {
+
+  input,
+  textarea,
+  select,
+  .form-input {
+    color: #191919 !important;
+    background-color: #ffffff !important;
+  }
+
+  input::placeholder,
+  textarea::placeholder,
+  select::placeholder {
+    color: #666666 !important;
+  }
+}
