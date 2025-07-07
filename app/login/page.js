@@ -40,7 +40,7 @@ export default function Login() {
         <div className="min-h-screen flex items-center justify-center p-4 bg-[#f3f2ef]">
             <div className="w-full max-w-md">
                 <div className="text-center mb-8">
-                    <h1 className="text-3xl font-bold text-gray-900">Innovatech EMMS</h1>
+                    <h1 className="text-3xl font-bold text-gray-900">Silent Sweep EMMS</h1>
                     <p className="mt-2 text-gray-600">Employee Management Made Simple</p>
                 </div>
 
