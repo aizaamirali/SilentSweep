@@ -5,7 +5,7 @@ import { AuthProvider } from '@/contexts/AuthContext';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Innovatech EMMS',
+  title: 'SilentSweep EMMS',
   description: 'Employee Management & Monitoring System',
 };
 
