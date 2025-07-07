@@ -964,7 +964,7 @@ async function createSystemSettings() {
   console.log('Creating system settings...');
   
   const settings = {
-    systemName: 'Innovatech EMMS',
+    systemName: 'Silent Sweep EMMS',
     notificationsEnabled: true,
     logRetentionDays: 90,
     maintenanceMode: false,
