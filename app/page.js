@@ -6,7 +6,7 @@ export default function Home() {
     <main className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-24 text-center">
       <div className="mb-12">
         <h1 className="text-4xl sm:text-6xl font-bold mb-4">
-          Innovatech EMMS
+          SilentSweep EMMS
         </h1>
         <p className="text-xl sm:text-2xl opacity-80 max-w-2xl mx-auto">
           Employee Management & Monitoring System
